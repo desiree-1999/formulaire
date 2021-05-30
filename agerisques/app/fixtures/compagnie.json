@@ -1,0 +1,17 @@
+[
+    {
+        "model" : "app.Compagnie",
+        "pk" : 1,
+        "fields":{
+            "nom_compagnie": "NSIA"
+        }
+    },
+    {
+        "model" : "app.Compagnie",
+        "pk" : 2,
+        "fields":{
+            "nom_compagnie": "ALLIANZ"
+        }
+    }
+
+]

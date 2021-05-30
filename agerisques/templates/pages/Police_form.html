@@ -1,0 +1,45 @@
+{% extends 'base/base.html'%}
+			
+
+{% block content%}
+
+
+			<!-- Content area -->
+			<center>
+				<form action="" method="post" autocomplete="off">
+					{% csrf_token %}
+					
+					<table>
+						{% for field in police_form %}
+						<tr>
+							<th>{{field.label}}</th>
+							<td>{{ field }}</td>
+						</tr>
+						{% endfor %}
+				
+					</table>
+					<center> 
+						
+						<div class="row">
+							{% for field in police_form %}
+								<div class="col-md-3"> {{field.label}}</div>
+								<div class="col-md-3"> {{ field }}</div>
+							{% endfor %}
+						</div>
+					<div class="row">
+						<div class="clo-ml-8">
+							<button type="submit" class="btn btn-success btn-block btn-lg">Enregistrer</button>
+						</div>
+					   <div class="col-md-4">
+							<a href="{% url 'Police_list' %}" class="btn btn-secondary btn-block btn-lg">
+								<i class="fas fa-stream"></i>voir la liste
+							</a>
+						</div>
+					</center>
+					</div>
+				</form>
+			</center>
+			<!-- /content area -->
+
+
+			{% endblock content%}

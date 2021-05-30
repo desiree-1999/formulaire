@@ -1,0 +1,34 @@
+[
+    {
+        "model" : "app.Type_contrat",
+        "pk" : 1,
+        "fields":{
+            "libelle_contrat": "AUTOMOBILE ET MOTO"
+        }
+
+    },
+    {
+        "model" : "app.Type_contrat",
+        "pk" : 2,
+        "fields":{
+            "libelle_contrat": "MALADIE"
+        }
+
+    },
+    {
+        "model" : "app.Type_contrat",
+        "pk" : 3,
+        "fields":{
+            "libelle_contrat": "MULTIRISQUE HABITATION"
+        }
+
+    },
+    {
+        "model" : "app.Type_contrat",
+        "pk" : 4,
+        "fields":{
+            "libelle_contrat": "MULTIRISQUE PROFESSIONNELLE"
+        }
+
+    }
+]

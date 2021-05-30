@@ -1,0 +1,58 @@
+{% extends 'base/base.html'%}
+			
+
+{% block content%}
+
+<!-- Content area -->
+<div class="content">
+	<!-- Basic datatable -->
+	<div class="card">
+		
+		<table class="table datatable-basic">
+			<thead>
+				<tr>
+					<td>nom_souscripteur</td>
+           			<td>prenom_souscripteur</td>
+           			<td>contact_souscripteur</td> 
+            		<td>mail_souscripteur</td>
+            		<td>numCNI_souscripteur</td>   
+					<td>
+						<a href="{% url 'Souscripteur_insert'%}" class="btn btn-outline-success">
+							<i class="fas fa-plus"></i> Nouveau
+						</a>
+					</td>
+
+				</tr>
+			</thead>
+			<tbody>
+				{% for Souscripteur in Souscripteur_list %}
+				<tr>
+					<td>{{Souscripteur.nom_souscripteur}}</td>
+					<td>{{Souscripteur.prenom_souscripteur}}</td>
+					<td>{{Souscripteur.contact_souscripteur}}</td>
+					<td>{{Souscripteur.mail_souscripteur}}</td>
+					<td>{{Souscripteur.numCNI_souscripteur}}</td>
+					<td> 
+						<a href="{% url 'Souscripteur_update' Souscripteur.id %}" class="btn text-secondary px-0">
+							<i class="far fa-edit fa-lg">
+							 modifier  
+							</i>
+						</a>
+						<form action="{% url 'Souscripteur_delete' Souscripteur.id %}" method="POST">
+							{% csrf_token %}
+							<button type="submit" class="btn">
+								<i class="far fa-trash-alt fa-lg text-danger float-right"></i>delete
+							</button>
+						</form>
+		
+					</td>
+				</tr>
+			   {% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<!-- /basic datatable -->
+</div>
+<!-- /content area -->
+
+{% endblock content%}
